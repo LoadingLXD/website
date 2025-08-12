@@ -1,0 +1,205 @@
+* {
+    color: #343131;
+    display: block;
+    background-color: transparent;
+    border: 0;
+    font-family: "Amiri", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#introDiv {
+    min-height: 400px;
+    height: fit-content;
+}
+
+.articles {
+    margin: 50px auto 20px auto;
+    padding: 100px;
+    width: 50vw;
+    max-width: 1500px;
+    height: fit-content;
+    position: relative;
+    align-items: center;
+    border-bottom: solid rgb(58, 58, 58) 4px;
+    justify-content: center;
+    /* Add these to prevent layout shift */
+    min-height: 200px; /* Adjust based on your content */
+    display: flex;
+    flex-direction: column;
+}
+
+.sentences {
+    display: block;
+    max-width: 90%;
+    width: 90%;
+    margin: 20px auto;
+    align-self: center;
+    text-align: center;
+    font-size: clamp(0.3rem, 2vw, 1.7rem);
+    line-height: 1.6; 
+    padding: 20px;
+    position: relative;
+    height: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 0 0px rgba(223, 173, 116, 0.7);
+    background-color: transparent;
+    transition: all 0.3s ease;
+    /* Add these for centered scaling */
+    transform-origin: center;
+    left: 0;
+    right: 0;
+    cursor: pointer; /* Show it's clickable */
+    touch-action: manipulation; /* Improve touch response */
+}
+
+.sentences:hover, 
+.sentences.active {
+    width: 100%;
+    font-size: clamp(0.6rem, 2.4vw, 2rem);
+    background-color: #dfdfdf3b;
+    box-shadow: 0 0 12px rgba(4, 2, 0, 0.9);
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.lilTitles {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 20px auto;
+    text-align: center;
+      font-family: "Aref Ruqaa", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.titles {
+
+    font-size: clamp(3rem, 5vw, 4rem);
+    text-align: center;
+    width: 50vw;
+    margin: 10px auto;
+    color: #A04747;
+      font-family: "Aref Ruqaa", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+i {
+    color: #A04747;
+    font-size: 1.2em;
+    font-style: oblique;
+    text-decoration: underline;
+    text-transform: capitalize;
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+body {
+    background: linear-gradient(to right, #eeba7a, #e4e0ac);
+}
+
+.behindImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0.8;
+    filter: blur(2px);
+}
+
+#productDiv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    justify-content: center;
+}
+
+.productCard {
+    margin: 20px 0;
+    background-color: #343131;
+    width: fit-content;
+    padding: 5px 5px 10px 5px;
+    border-radius: 20px;
+     background-color: transparent; /* الخلفية افتراضية شفافة */
+  transition: background-color 0.6s ease; 
+}
+.productCard:hover {
+  background-color: rgba(160, 71, 71, 0.3); /* لون خلفية مع شفافية */
+}
+
+.productButton {
+    border: none;
+    background: none;
+    padding: 0;
+    width: 30vw;  /* حجم أكبر */
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.productImg {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* يحافظ على النسبة 16:9 */
+    object-fit: cover; /* يملأ الإطار ويقص الزوائد */
+    border-radius: 20px;
+}
+
+
+/* تعديل productInfo ليصير عمودي */
+.productInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* توسيط الأفقي */
+    gap: 15px; /* مسافة بين الأيقونة والنص */
+    margin-top: 10px;
+    flex-wrap: nowrap;
+}
+
+/* الأيقونة أكبر وأوضح */
+.productIcon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #A04747; /* إطار بسيط */
+    box-shadow: 0 0 8px rgba(160, 71, 71, 0.7);
+}
+
+/* العنوان مع تقطيع النص ونص مركّز */
+.productTitle {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    word-wrap: break-word;
+    word-break: break-word;
+    text-align: center;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@media (max-width: 768px) {
+    .articles {
+        padding: 50px 20px;
+        width: 80vw;
+    }
+    
+    .sentences {
+        padding: 15px;
+        font-size: clamp(0.8rem, 3vw, 1.5rem);
+    }
+    
+    .sentences:hover, 
+    .sentences.active {
+        font-size: clamp(1rem, 3.5vw, 1.8rem);
+    }
+}
